@@ -1,3 +1,0 @@
-<aura:component>
-    <aura:attribute name="partidas" type="Object[]" default="[]"/>
-</aura:component>	

@@ -5,7 +5,6 @@
     <aura:attribute name="score" type="Integer" default="0"/>
     <aura:attribute name="highscore" type="Integer" default="0"/>
 
-
     <aura:handler event="c:reloadApexMethod" action="{!c.callApex}"/>
     <aura:handler event="c:almacenarIntentos" action="{!c.aumentarContador}"/>
     <table style="background-color: aquamarine; margin-left: 500px; margin-top: 100px; border:5px solid red; height:300px; width:300px;">
@@ -32,19 +31,6 @@
     <p style="margin-left: 600px; border:2px solid green; width:5.3%"><lightning:button label="Play/Reset" onclick="{!c.llamarDosFunciones}" /></p>
     <p style="margin-left: 619px; border:2px solid red; width:2.8%"><lightning:button label="Stop" onclick="{!c.stopGame}" /></p>
     
-    <table>
-        <thead>
-            <tr>
-                <th>Puntuaciones</th>
-            </tr>
-        </thead>
-        <tbody>
-            <aura:iteration items="{!v.puntuacionPartidas}" var="puntuacion">
-                <tr>
-                    <td>{!puntuacion}</td>
-                </tr>
-            </aura:iteration>
-        </tbody>
-    </table>
+    <c:TablaPuntuaciones aura:id="TablaPuntuaciones"/>
     
 </aura:component>	

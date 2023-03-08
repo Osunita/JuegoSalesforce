@@ -2,22 +2,6 @@
     helperMethod : function() {
 
     },
-
-    initRegistroPartidas : function(component, event, helper) {
-        var partidas = component.get("v.partidas");
-        if (!Array.isArray(partidas)) {
-            partidas = [];
-            component.set("v.partidas", partidas);
-        }
-    },
-    
-    
-    guardarPartida : function(component, partida){
-        var partidas = component.get("v.partidas");
-        var newPartida = {puntuacion: partida, fecha: new Date().toLocaleString()};
-        partidas.push(newPartida);
-        component.set("v.partidas", partidas);
-    },
    
     reset: function(component, event, helper) {
         alert("Empieza la partida");

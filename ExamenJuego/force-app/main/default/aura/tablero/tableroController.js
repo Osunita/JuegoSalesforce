@@ -116,25 +116,20 @@
         var evento = $A.get("e.c:reloadApexMethod");
         evento.fire();
     },
-    stopGame : function(component, event, helper) {
-        // Detener el juego
-        clearInterval(component.get('v.intervalId'));
+    stopGame: function(component, event, helper) {
+        alert("La Puntuación es: " + component.get("v.score"));
+        component.set("v.score", 0);
         
-        // Agregar la puntuación actual a la lista de partidas
-        var partidas = component.get('v.partidas');
-        var score = component.get('v.score');
-        partidas = partidas.concat(score);
-        component.set('v.partidas', partidas);
-        
-        // Reiniciar la puntuación
-        component.set('v.score', 0);
     },
-    
-    
     
     llamarDosFunciones : function(component, event, helper) {
         helper.reset(component);
         helper.callApex(component, event);
-      }
+    },
+
+    guardarPuntuacion : function(component, event, helper) {
+        var tablaPuntuaciones = component.find("TablaPuntuaciones");
+        tablaPuntuaciones.guardarPuntuacion(component.get(v.score));
+    }
       
 })
