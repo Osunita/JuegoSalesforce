@@ -2,6 +2,8 @@
     myAction : function(component, event, helper) {
 
     },
+    
+
     callApex : function(component, event, helper){
         
 
@@ -116,18 +118,6 @@
     },
     stopGame : function(component, event){
         alert("Puntuacion de: " + component.get("v.score"));
-
-        var partida = {
-            fecha: new Date(),
-            puntuacion: component.get("v.score")
-        };
-        
-        // Obtener la lista actual de partidas y agregar la nueva partida
-        var partidas = component.get("v.partidas");
-        partidas.push(partida);
-        
-        // Actualizar el atributo con la lista actualizada de partidas
-        component.set("v.partidas", partidas);
 
 
         component.set("v.highscore", component.get("v.score"));
