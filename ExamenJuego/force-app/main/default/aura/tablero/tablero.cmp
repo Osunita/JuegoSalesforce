@@ -31,4 +31,23 @@
     <br/>
     <p style="margin-left: 600px; border:2px solid green; width:5.3%"><lightning:button label="Play/Reset" onclick="{!c.llamarDosFunciones}" /></p>
     <p style="margin-left: 619px; border:2px solid red; width:2.8%"><lightning:button label="Stop" onclick="{!c.stopGame}" /></p>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>Fecha</th>
+                <th>Puntuación</th>
+            </tr>
+        </thead>
+        <tbody>
+            <aura:iteration items="{!v.partidas}" var="partida">
+                <tr>
+                    <td>{!partida.fecha}</td>
+                    <td>{!partida.puntuacion}</td>
+                </tr>
+            </aura:iteration>
+        </tbody>
+    </table>
+    
+
 </aura:component>	

@@ -3,4 +3,4 @@
     <aura:attribute name="numIntento" type="Integer" default="0"/>
 
     <input class="{!v.clase}" type="button" value="Topito" onclick="{!c.recibirClic}"/>
-</aura:component>	
+</aura:component>
