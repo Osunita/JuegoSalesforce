@@ -35,19 +35,16 @@
     <table>
         <thead>
             <tr>
-                <th>Fecha</th>
-                <th>Puntuación</th>
+                <th>Puntuaciones</th>
             </tr>
         </thead>
         <tbody>
-            <aura:iteration items="{!v.partidas}" var="partida">
+            <aura:iteration items="{!v.puntuacionPartidas}" var="puntuacion">
                 <tr>
-                    <td>{!partida.fecha}</td>
-                    <td>{!partida.puntuacion}</td>
+                    <td>{!puntuacion}</td>
                 </tr>
             </aura:iteration>
         </tbody>
     </table>
     
-
 </aura:component>	

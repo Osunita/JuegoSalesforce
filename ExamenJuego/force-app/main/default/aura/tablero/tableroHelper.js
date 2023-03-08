@@ -3,6 +3,19 @@
 
     },
 
+    guardarPartida : function(component, partidas, helper) {
+        var action = component.get("c.crearRegistroPartida");
+        action.setParams({partidas: partidas.push(component.get("v.score"))});
+        action.setCallback(this, function(response) {
+            var state = response.getState();
+            if (state === "SUCCESS") {
+                console.log("Guardado exitosamente");
+            }
+        });
+        $A.enqueueAction(action);
+    },
+    
+
     reset: function(component, event, helper) {
         alert("Empieza la partida");
         component.set("v.score", 0);

@@ -116,14 +116,14 @@
         var evento = $A.get("e.c:reloadApexMethod");
         evento.fire();
     },
-    stopGame : function(component, event){
+    stopGame : function(component, event, helper){
         alert("Puntuacion de: " + component.get("v.score"));
-
+        
+        helper.guardarPartida(component, []);
 
         component.set("v.highscore", component.get("v.score"));
         component.set("v.score", 0);
     },
-
     llamarDosFunciones : function(component, event, helper) {
         helper.reset(component);
         helper.callApex(component, event);
