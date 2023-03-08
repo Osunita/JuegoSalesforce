@@ -118,7 +118,7 @@
     },
     stopGame: function(component, event, helper) {
         alert("La Puntuación es: " + component.get("v.score"));
-        helper.guardarPuntuacion(component);
+        helper.guardarPuntuacion(component.get("v.score"));
         component.set("v.highscore", component.get("v.score"));
         component.set("v.score", 0);
         

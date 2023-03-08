@@ -3,10 +3,11 @@
 
     },
 
-    guardarPuntuacion : function(component, event, helper) {
-        var tablaPuntuaciones = component.find("TablaPuntuaciones");
-        tablaPuntuaciones.guardarPuntuacion(component.get(v.score));
+    guardarPuntuacion: function(puntuacion) {
+        var tablaPuntuaciones = find("TablaPuntuaciones");
+        tablaPuntuaciones.guardarPuntuacion(puntuacion);
     },
+    
    
     reset: function(component, event, helper) {
         alert("Empieza la partida");

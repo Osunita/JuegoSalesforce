@@ -31,6 +31,6 @@
     <p style="margin-left: 600px; border:2px solid green; width:5.3%"><lightning:button label="Play/Reset" onclick="{!c.llamarDosFunciones}" /></p>
     <p style="margin-left: 619px; border:2px solid red; width:2.8%"><lightning:button label="Stop" onclick="{!c.stopGame}" /></p>
     
-    <p><c:TablaPuntuaciones aura:id="TablaPuntuaciones"/></p>
+    <p><c:tablaPuntuaciones aura:id="TablaPuntuaciones"/></p>
     
 </aura:component>
