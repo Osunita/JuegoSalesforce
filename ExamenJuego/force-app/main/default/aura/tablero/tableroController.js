@@ -119,12 +119,10 @@
         component.set("v.highscore", component.get("v.score"));
         component.set("v.score", 0);
     },
-    reset : function(component, event){
-        component.set("v.score", 0);
-    },
 
-    llamarDosFunciones : function(component, event){
-        this.reset(component, event);
-        this.callApex(component, event);
-    },
+    llamarDosFunciones : function(component, event, helper) {
+        helper.reset(component);
+        helper.callApex(component, event);
+      }
+      
 })
