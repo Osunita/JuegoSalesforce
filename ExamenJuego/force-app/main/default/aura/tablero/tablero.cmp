@@ -21,10 +21,14 @@
             <td style="border: 2px solid; text-align:center"> <c:casilla aura:id="5" /> </td>
             <td style="border: 2px solid; text-align:center"> <c:casilla aura:id="6" /> </td>
         </tr>
+        <tr>
+            <td style="border: 2px solid; text-align:center"> <c:casilla aura:id="7" /> </td>
+            <td style="border: 2px solid; text-align:center"> <c:casilla aura:id="8" /> </td>
+        </tr>
     </table>
     <br/>
-    <span style=" margin-left: 500px;">Tu ultima puntuacion ha sido {!v.highscore}</span>
+    <span style=" margin-left: 530px;">Tu ultima puntuacion ha sido {!v.highscore}</span>
     <br/>
-    <p style="margin-left: 600px; border:2px solid green; width:2.7%"><lightning:button label="Play" onclick="{!c.callApex}" /></p>
-    <p style="margin-left: 600px; border:2px solid red; width:2.8%"><lightning:button label="Stop" onclick="{!c.stopGame}" /></p>
+    <p style="margin-left: 600px; border:2px solid green; width:5.3%"><lightning:button label="Play/Reset" onclick="{!c.llamarDosFunciones}" /></p>
+    <p style="margin-left: 619px; border:2px solid red; width:2.8%"><lightning:button label="Stop" onclick="{!c.stopGame}" /></p>
 </aura:component>	

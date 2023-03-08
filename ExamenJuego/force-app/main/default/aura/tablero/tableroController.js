@@ -22,6 +22,8 @@
                         component.find("4").set("v.clase", "limpia");
                         component.find("5").set("v.clase", "limpia");
                         component.find("6").set("v.clase", "limpia");
+                        component.find("7").set("v.clase", "limpia");
+                        component.find("8").set("v.clase", "limpia");
                         break;
                     case 2:
                         component.find("1").set("v.clase", "limpia");
@@ -30,6 +32,8 @@
                         component.find("4").set("v.clase", "limpia");
                         component.find("5").set("v.clase", "limpia");
                         component.find("6").set("v.clase", "limpia");
+                        component.find("7").set("v.clase", "limpia");
+                        component.find("8").set("v.clase", "limpia");
                         break;
                     case 3:
                         component.find("1").set("v.clase", "limpia");
@@ -38,6 +42,8 @@
                         component.find("4").set("v.clase", "limpia");
                         component.find("5").set("v.clase", "limpia");
                         component.find("6").set("v.clase", "limpia");
+                        component.find("7").set("v.clase", "limpia");
+                        component.find("8").set("v.clase", "limpia");
                         break;
                     case 4:
                         component.find("1").set("v.clase", "limpia");
@@ -46,6 +52,8 @@
                         component.find("4").set("v.clase", "color");
                         component.find("5").set("v.clase", "limpia");
                         component.find("6").set("v.clase", "limpia");
+                        component.find("7").set("v.clase", "limpia");
+                        component.find("8").set("v.clase", "limpia");
                         break;
                     case 5:
                         component.find("1").set("v.clase", "limpia");
@@ -54,6 +62,8 @@
                         component.find("4").set("v.clase", "limpia");
                         component.find("5").set("v.clase", "color");
                         component.find("6").set("v.clase", "limpia");
+                        component.find("7").set("v.clase", "limpia");
+                        component.find("8").set("v.clase", "limpia");
                         break;
                     case 6:
                         component.find("1").set("v.clase", "limpia");
@@ -62,6 +72,29 @@
                         component.find("4").set("v.clase", "limpia");
                         component.find("5").set("v.clase", "limpia");
                         component.find("6").set("v.clase", "color");
+                        component.find("7").set("v.clase", "limpia");
+                        component.find("8").set("v.clase", "limpia");
+                        break;
+                    case 7:
+                        component.find("1").set("v.clase", "limpia");
+                        component.find("2").set("v.clase", "limpia");
+                        component.find("3").set("v.clase", "limpia");
+                        component.find("4").set("v.clase", "limpia");
+                        component.find("5").set("v.clase", "limpia");
+                        component.find("6").set("v.clase", "limpia");
+                        component.find("7").set("v.clase", "color");
+                        component.find("8").set("v.clase", "limpia");
+                        break;
+                    case 8:
+                        component.find("1").set("v.clase", "limpia");
+                        component.find("2").set("v.clase", "limpia");
+                        component.find("3").set("v.clase", "limpia");
+                        component.find("4").set("v.clase", "limpia");
+                        component.find("5").set("v.clase", "limpia");
+                        component.find("6").set("v.clase", "limpia");
+                        component.find("7").set("v.clase", "limpia");
+                        component.find("8").set("v.clase", "color");
+                        break;
                         }
             }
         });
@@ -70,22 +103,28 @@
     aumentarContador : function(component, event){
         var acierto = event.getParam("sumar");
         if (acierto){
+            alert("Buena")
             var numScore = component.get("v.score");
             component.set("v.score", numScore+1);
         }
         else{
-            alert("GameOver")
+            alert("Mala")
             component.set("v.score", 0);
         }
         var evento = $A.get("e.c:reloadApexMethod");
         evento.fire();
     },
     stopGame : function(component, event){
-        alert("GG, tu score ha sido " + component.get("v.score") + " puntos");
+        alert("Puntuacion de: " + component.get("v.score"));
         component.set("v.highscore", component.get("v.score"));
         component.set("v.score", 0);
+    },
+    reset : function(component, event){
+        component.set("v.score", 0);
+    },
 
-
-
-    }
+    llamarDosFunciones : function(component, event){
+        this.reset(component, event);
+        this.callApex(component, event);
+    },
 })
