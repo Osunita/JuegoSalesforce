@@ -118,6 +118,8 @@
     },
     stopGame: function(component, event, helper) {
         alert("La Puntuación es: " + component.get("v.score"));
+        helper.guardarPuntuacion(component);
+        component.set("v.highscore", component.get("v.score"));
         component.set("v.score", 0);
         
     },
@@ -127,9 +129,6 @@
         helper.callApex(component, event);
     },
 
-    guardarPuntuacion : function(component, event, helper) {
-        var tablaPuntuaciones = component.find("TablaPuntuaciones");
-        tablaPuntuaciones.guardarPuntuacion(component.get(v.score));
-    }
+    
       
 })

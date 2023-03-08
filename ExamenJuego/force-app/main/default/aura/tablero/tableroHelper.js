@@ -2,6 +2,11 @@
     helperMethod : function() {
 
     },
+
+    guardarPuntuacion : function(component, event, helper) {
+        var tablaPuntuaciones = component.find("TablaPuntuaciones");
+        tablaPuntuaciones.guardarPuntuacion(component.get(v.score));
+    },
    
     reset: function(component, event, helper) {
         alert("Empieza la partida");
