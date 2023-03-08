@@ -118,12 +118,12 @@
     },
     stopGame : function(component, event, helper){
         alert("Puntuacion de: " + component.get("v.score"));
-        
-        helper.guardarPartida(component, []);
-
+        helper.initRegistroPartidas(component);
+        helper.guardarPartida(component, component.get("v.score"));
         component.set("v.highscore", component.get("v.score"));
         component.set("v.score", 0);
     },
+    
     llamarDosFunciones : function(component, event, helper) {
         helper.reset(component);
         helper.callApex(component, event);

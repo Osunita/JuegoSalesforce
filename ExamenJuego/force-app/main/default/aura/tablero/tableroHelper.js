@@ -3,25 +3,28 @@
 
     },
 
-    guardarPartida : function(component, partidas, helper) {
-        var action = component.get("c.crearRegistroPartida");
-        action.setParams({partidas: partidas.push(component.get("v.score"))});
-        action.setCallback(this, function(response) {
-            var state = response.getState();
-            if (state === "SUCCESS") {
-                console.log("Guardado exitosamente");
-            }
-        });
-        $A.enqueueAction(action);
+    initRegistroPartidas : function(component, event, helper) {
+        var partidas = component.get("v.partidas");
+        if (!Array.isArray(partidas)) {
+            partidas = [];
+            component.set("v.partidas", partidas);
+        }
     },
     
-
+    
+    guardarPartida : function(component, partida){
+        var partidas = component.get("v.partidas");
+        var newPartida = {puntuacion: partida, fecha: new Date().toLocaleString()};
+        partidas.push(newPartida);
+        component.set("v.partidas", partidas);
+    },
+   
     reset: function(component, event, helper) {
         alert("Empieza la partida");
         component.set("v.score", 0);
       },
 
-      callApex : function(component, event, helper){
+    callApex : function(component, event, helper){
         
 
         var action = component.get("c.generar");
